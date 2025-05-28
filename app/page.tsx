@@ -5,8 +5,9 @@ const HomePage = () => {
   return (
     <main className="min-h-screen bg-white text-gray-800 font-sans">
       {/* Header */}
-      <header className="bg-blue-500 text-white p-4 shadow-md">
+      <header className="bg-blue-500 text-white p-4 shadow-md h-15 flex-items-center">
         <div className="container mx-auto flex justify-between items-center">
+          <img src="Logo3.png" alt="Logo" className="h-17 w-auto"/>
           <h1 className="text-2xl font-bold">WarungAI</h1>
           <nav className="space-x-4">
             <a href="#fitur" className="hover:underline">Fitur</a>
