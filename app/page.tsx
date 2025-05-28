@@ -7,8 +7,7 @@ const HomePage = () => {
       {/* Header */}
       <header className="bg-blue-500 text-white p-4 shadow-md h-15 flex-items-center">
         <div className="container mx-auto flex justify-between items-center">
-          <img src="Logo3.png" alt="Logo" className="h-10 w-auto"/>
-          <h1 className="text-2xl font-bold">WarungAI</h1>
+          <img src="Logo3.png" alt="Logo" className="h-17 w-auto"/>
           <nav className="space-x-4">
             <a href="#fitur" className="hover:underline">Fitur</a>
             <a href="#cara" className="hover:underline">Cara Kerja</a>
