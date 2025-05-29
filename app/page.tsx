@@ -6,7 +6,7 @@ export default function HomePage() { return (
 
 {/* Header */} 
 
-<header className="bg-blue-500 text-white p-4 shadow-md">
+<header className="bg-blue-500 text-white p-4 shadow-md py-2">
   <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between py-2">
     {/* Logo */}
     <div className="flex items-center space-x-2">
