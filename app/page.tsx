@@ -1,127 +1,104 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+// File: app/page.tsx
+
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+import { ShoppingCart, LayoutDashboard, Store, ChefHat, Coins } from "lucide-react";
 
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-white text-gray-800 font-sans">
       {/* Header */}
-      <header className="bg-blue-500 text-white py-2 px-4 shadow-md">
-        <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between">
-          {/* Logo */}
+      <header className="bg-blue-500 text-white shadow-md">
+        <div className="container mx-auto flex flex-wrap justify-between items-center p-4">
           <div className="flex items-center space-x-2">
             <img
               src="/Logo3.png"
               alt="WarungAI Logo"
-              className="h-12 sm:h-14 md:h-16 w-auto"
+              className="h-12 sm:h-16 w-auto"
             />
+            <span className="text-xl sm:text-2xl font-bold">WarungAI</span>
           </div>
-
-          {/* Menu Navigasi */}
-          <nav className="flex flex-wrap justify-center gap-6 text-sm mt-4 sm:mt-0">
+          <nav className="flex flex-wrap gap-4 text-sm sm:text-base">
             <a href="#fitur" className="hover:underline">Fitur</a>
-            <a href="#cara" className="hover:underline">Cara Kerja</a>
-            <a href="#demo" className="hover:underline">Demo</a>
-            <a href="#kontak" className="hover:underline">Kontak</a>
             <a href="#kategori" className="hover:underline">Kategori</a>
+            <a href="#premium" className="hover:underline">Premium</a>
+            <a href="#kontak" className="hover:underline">Kontak</a>
           </nav>
         </div>
       </header>
 
-      {/* Hero Section */}
+      {/* Hero */}
       <motion.section
         className="text-center py-20 px-4 bg-blue-100"
         id="hero"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
       >
         <h2 className="text-4xl font-bold mb-4">Digitalisasi Warung Anda Sekarang</h2>
-        <p className="text-lg mb-6">Mudah. Cepat. Gratis.</p>
-        <button className="bg-blue-500 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-600">
-          Coba Sekarang
-        </button>
+        <p className="text-lg mb-6">Mudah. Cepat. Gratis. Atau Berlangganan untuk fitur Pro!</p>
+        <div className="flex justify-center gap-4">
+          <button className="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">Mulai Gratis</button>
+          <button className="bg-white text-blue-500 border border-blue-500 px-6 py-2 rounded hover:bg-blue-100">Upgrade ke Premium</button>
+        </div>
       </motion.section>
 
-      {/* Tentang */}
-      <section className="py-16 px-4" id="tentang">
-        <div className="max-w-3xl mx-auto text-center">
-          <h3 className="text-2xl font-semibold mb-4">Tentang WarungAI</h3>
-          <p>
-            WarungAI adalah solusi digital untuk warung tradisional agar bisa Go Digital dan lebih kompetitif menghadapi era modern.
-          </p>
-        </div>
-      </section>
-
-      {/* Fitur Unggulan */}
+      {/* Fitur */}
       <section className="bg-gray-100 py-16 px-4" id="fitur">
         <div className="max-w-5xl mx-auto">
           <h3 className="text-2xl font-semibold text-center mb-10">Fitur Unggulan</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             <Feature title="Website Mini Gratis" />
             <Feature title="Input Stok & Transaksi" />
-            <Feature title="Rekomendasi Barang Laris (AI)" />
+            <Feature title="Rekomendasi AI Barang Laris" />
             <Feature title="Terhubung ke WhatsApp" />
-            <Feature title="Manajemen Stok (Premium)" />
-            <Feature title="Laporan Keuangan (Premium)" />
-            <Feature title="Dashboard Statistik" />
-            <Feature title="Chatbot AI Penjawab Pelanggan" />
+            <Feature title="Dashboard Penjualan" />
+            <Feature title="Laporan Keuangan" />
           </div>
         </div>
       </section>
 
       {/* Kategori */}
       <section className="py-16 px-4" id="kategori">
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-2xl font-semibold mb-10">Kategori Produk & Layanan</h3>
-          <ul className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-left">
-            <li>✅ ChatbotAI</li>
-            <li>✅ Mini Website</li>
-            <li>✅ Input Produk</li>
-            <li>✅ Transaksi</li>
-            <li>✅ Laporan</li>
-            <li>✅ Dashboard</li>
-            <li>✅ Dukungan WhatsApp</li>
-            <li>✅ Katalog Online</li>
-          </ul>
-        </div>
-      </section>
-
-      {/* Perbandingan Gratis vs Premium */}
-      <section className="bg-white py-16 px-4" id="paket">
         <div className="max-w-5xl mx-auto">
-          <h3 className="text-2xl font-semibold text-center mb-10">Pilih Paket Anda</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="border rounded-lg p-6 shadow">
-              <h4 className="text-xl font-bold mb-4">Gratis</h4>
-              <ul className="list-disc list-inside">
-                <li>Website Mini</li>
-                <li>Input Produk Maks. 20</li>
-                <li>Terhubung WhatsApp</li>
-              </ul>
-              <button className="mt-4 bg-blue-500 text-white px-4 py-2 rounded">Mulai Gratis</button>
-            </div>
-            <div className="border rounded-lg p-6 shadow">
-              <h4 className="text-xl font-bold mb-4">Premium</h4>
-              <ul className="list-disc list-inside">
-                <li>Produk Unlimited</li>
-                <li>Manajemen Stok</li>
-                <li>Laporan Keuangan</li>
-                <li>Dashboard Lanjutan</li>
-              </ul>
-              <button className="mt-4 bg-green-500 text-white px-4 py-2 rounded">Upgrade Premium</button>
-            </div>
+          <h3 className="text-2xl font-semibold text-center mb-10">Kategori Warung</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center">
+            <Kategori icon={<ChefHat />} label="Warung Padang" />
+            <Kategori icon={<ChefHat />} label="Warung Tegal" />
+            <Kategori icon={<Store />} label="Warung Pasar" />
+            <Kategori icon={<Store />} label="Warung Nasi Sunda" />
+            <Kategori icon={<LayoutDashboard />} label="Kios / Grosir" />
+            <Kategori icon={<Coins />} label="Sembako" />
+            <Kategori icon={<ShoppingCart />} label="Retail Kecil" />
+            <Kategori icon={<Store />} label="UMKM Lainnya" />
           </div>
         </div>
       </section>
 
-      {/* Demo */}
-      <section className="bg-blue-50 py-16 px-4" id="demo">
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-2xl font-semibold mb-6">Demo Warung: Bu Tini</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <Product name="Minyak Goreng" price="Rp15.000" />
-            <Product name="Beras 5kg" price="Rp60.000" />
-            <Product name="Sabun Cuci" price="Rp7.000" />
+      {/* Premium */}
+      <section className="bg-white py-16 px-4" id="premium">
+        <div className="max-w-4xl mx-auto">
+          <h3 className="text-2xl font-semibold text-center mb-8">Paket Gratis vs Premium</h3>
+          <div className="overflow-auto">
+            <table className="w-full table-auto border border-gray-300 text-sm">
+              <thead>
+                <tr className="bg-gray-200">
+                  <th className="p-2 text-left">Fitur</th>
+                  <th className="p-2 text-center">Gratis</th>
+                  <th className="p-2 text-center">Premium</th>
+                </tr>
+              </thead>
+              <tbody>
+                <Row label="Jumlah Produk" free="10" premium="Unlimited" />
+                <Row label="Manajemen Stok" free="❌" premium="✅" />
+                <Row label="Laporan Keuangan" free="❌" premium="✅" />
+                <Row label="Dashboard" free="❌" premium="✅" />
+                <Row label="Akses WhatsApp" free="✅" premium="✅" />
+                <Row label="Custom Domain" free="❌" premium="✅" />
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
@@ -138,28 +115,27 @@ export default function HomePage() {
 
 function Feature({ title }: { title: string }) {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md text-center">
+    <motion.div className="bg-white p-6 rounded shadow text-center" whileHover={{ scale: 1.05 }}>
       <h4 className="font-semibold text-lg">{title}</h4>
+    </motion.div>
+  );
+}
+
+function Kategori({ icon, label }: { icon: React.ReactNode; label: string }) {
+  return (
+    <div className="flex flex-col items-center justify-center space-y-2 p-4 bg-white rounded shadow">
+      <div className="text-blue-500 text-3xl">{icon}</div>
+      <p className="text-sm font-medium">{label}</p>
     </div>
   );
 }
 
-function Step({ number, text }: { number: string; text: string }) {
+function Row({ label, free, premium }: { label: string; free: string; premium: string }) {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md">
-      <div className="text-blue-500 text-4xl font-bold mb-2">{number}</div>
-      <p>{text}</p>
-    </div>
-  );
-}
-
-function Product({ name, price }: { name: string; price: string }) {
-  return (
-    <div className="bg-white p-4 rounded-lg shadow-md">
-      <div className="h-32 bg-gray-200 mb-4 flex items-center justify-center">Gambar</div>
-      <h4 className="font-bold text-lg mb-1">{name}</h4>
-      <p className="text-blue-500">{price}</p>
-      <button className="mt-2 px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">Beli</button>
-    </div>
+    <tr className="border-t">
+      <td className="p-2">{label}</td>
+      <td className="p-2 text-center">{free}</td>
+      <td className="p-2 text-center">{premium}</td>
+    </tr>
   );
 }
