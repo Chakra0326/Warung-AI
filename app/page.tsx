@@ -96,8 +96,32 @@ export default function HomePage() { return (
 
 ); }
 
-function Feature({ title }) { return ( <div className="bg-white p-6 rounded-lg shadow-md text-center"> <h4 className="font-semibold text-lg">{title}</h4> </div> ); }
+function Feature({ title }: { title: string }) {
+  return (
+    <div className="bg-white p-6 rounded-lg shadow-md text-center">
+      <h4 className="font-semibold text-lg">{title}</h4>
+    </div>
+  );
+}
 
-function Step({ number, text }) { return ( <div className="bg-white p-6 rounded-lg shadow-md"> <div className="text-blue-500 text-4xl font-bold mb-2">{number}</div> <p>{text}</p> </div> ); }
+function Step({ number, text }: { number: string; text: string }) {
+  return (
+    <div className="bg-white p-6 rounded-lg shadow-md">
+      <div className="text-blue-500 text-4xl font-bold mb-2">{number}</div>
+      <p>{text}</p>
+    </div>
+  );
+}
 
-function Product({ name, price }) { return ( <div className="bg-white p-4 rounded-lg shadow-md"> <div className="h-32 bg-gray-200 mb-4 flex items-center justify-center">Gambar</div> <h4 className="font-bold text-lg mb-1">{name}</h4> <p className="text-blue-500">{price}</p> <button className="mt-2 px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-600"> Beli </button> </div> ); }
+function Product({ name, price }: { name: string; price: string }) {
+  return (
+    <div className="bg-white p-4 rounded-lg shadow-md">
+      <div className="h-32 bg-gray-200 mb-4 flex items-center justify-center">Gambar</div>
+      <h4 className="font-bold text-lg mb-1">{name}</h4>
+      <p className="text-blue-500">{price}</p>
+      <button className="mt-2 px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">Beli</button>
+    </div>
+  );
+}
+
+
