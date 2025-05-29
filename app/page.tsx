@@ -13,7 +13,7 @@ export default function HomePage() { return (
       <img
         src="/Logo3.png"
         alt="WarungAI Logo"
-        className="h-15 sm:h-16 w-auto"
+        className="h-25 sm:h-15 w-auto"
       />
     </div>
 
