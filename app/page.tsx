@@ -7,13 +7,13 @@ export default function HomePage() { return (
 {/* Header */} 
 
 <header className="bg-blue-500 text-white p-4 shadow-md">
-  <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+  <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between py-2">
     {/* Logo */}
-    <div className="flex items-center justify-center sm:justify-start">
+    <div className="flex items-center space-x-2">
       <img
         src="/Logo3.png"
         alt="WarungAI Logo"
-        className="h-35 sm:h-10 md:h-25 lg:h-25 w-auto"
+        className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto"
       />
     </div>
 
