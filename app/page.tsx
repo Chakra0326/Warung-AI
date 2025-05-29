@@ -1,6 +1,33 @@
 import React from 'react';
 
-export default function HomePage() { return ( <main className="min-h-screen bg-white text-gray-800 font-sans"> {/* Header */} <header className="bg-blue-500 text-white p-4 shadow-md"> <div className="container mx-auto flex justify-between items-center"> <h1 className="text-2xl font-bold">WarungAI</h1> <nav className="space-x-4"> <a href="#fitur" className="hover:underline">Fitur</a> <a href="#cara" className="hover:underline">Cara Kerja</a> <a href="#demo" className="hover:underline">Demo</a> <a href="#kontak" className="hover:underline">Kontak</a> </nav> </div> </header>
+export default function HomePage() { return ( 
+
+<main className="min-h-screen bg-white text-gray-800 font-sans"> 
+
+{/* Header */} 
+
+<header className="bg-blue-500 text-white p-4 shadow-md">
+  <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+    {/* Logo */}
+    <div className="flex items-center justify-center sm:justify-start">
+      <img
+        src="/Logo3.png"
+        alt="WarungAI Logo"
+        className="h-12 sm:h-16 w-auto"
+      />
+    </div>
+
+    {/* Menu Navigasi */}
+    <nav className="flex flex-wrap justify-center gap-6 text-sm">
+      <a href="#fitur" className="hover:underline">Fitur</a>
+      <a href="#cara" className="hover:underline">Cara Kerja</a>
+      <a href="#demo" className="hover:underline">Demo</a>
+      <a href="#kontak" className="hover:underline">Kontak</a>
+    </nav>
+  </div>
+</header>
+
+
 
 {/* Hero Section */}
   <section className="text-center py-20 px-4 bg-blue-100" id="hero">
