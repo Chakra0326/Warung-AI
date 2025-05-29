@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import Logo from '@/public/logo3.png'; // pastikan file logo3.png ada di /public
+import Logo from '@/public/Logo3.png'; // pastikan file logo3.png ada di /public
 
 export default function HomePage() {
   return (
