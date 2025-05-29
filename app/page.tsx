@@ -1,33 +1,10 @@
-import React from 'react';
+import React from "react"; import Link from "next/link";
 
-export default function HomePage() { return ( 
-
-<main className="min-h-screen bg-white text-gray-800 font-sans"> 
-
-{/* Header */} 
-
-<header className="bg-blue-500 text-white py-0.1 px-0.2 shadow-md flex items-center">
-  <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between flex items-center">
-    {/* Logo */}
-    <div className="flex items-center space-x-2">
-      <img
-        src="/Logo3.png"
-        alt="WarungAI Logo"
-        className="h-35 sm:h-35 md:h-35 w-auto"
-      />
-    </div>
-
-    {/* Menu Navigasi */}
-    <nav className="flex flex-wrap justify-center gap-6 text-sm">
-      <a href="#fitur" className="hover:underline">Fitur</a>
-      <a href="#cara" className="hover:underline">Cara Kerja</a>
-      <a href="#demo" className="hover:underline">Demo</a>
-      <a href="#kontak" className="hover:underline">Kontak</a>
-    </nav>
-  </div>
-</header>
-
-
+export default function HomePage() { return ( <main className="min-h-screen bg-white text-gray-800 font-sans"> {/* Header */} <header className="bg-blue-500 text-white p-4 shadow-md"> <div className="container mx-auto flex justify-between items-center"> <img
+src="/Logo3.png"
+alt="WarungAI Logo"
+className="h-10 w-auto object-contain"
+/> <nav className="space-x-4"> <a href="#fitur" className="hover:underline"> Fitur </a> <a href="#kategori" className="hover:underline"> Kategori </a> <a href="#demo" className="hover:underline"> Demo </a> <a href="#kontak" className="hover:underline"> Kontak </a> </nav> </div> </header>
 
 {/* Hero Section */}
   <section className="text-center py-20 px-4 bg-blue-100" id="hero">
@@ -38,38 +15,20 @@ export default function HomePage() { return (
     </button>
   </section>
 
-  {/* Tentang */}
-  <section className="py-16 px-4" id="tentang">
-    <div className="max-w-3xl mx-auto text-center">
-      <h3 className="text-2xl font-semibold mb-4">Tentang WarungAI</h3>
-      <p>
-        WarungAI adalah solusi digital untuk warung tradisional agar bisa Go Digital dan lebih kompetitif
-        menghadapi era modern.
-      </p>
-    </div>
-  </section>
-
-  {/* Fitur Unggulan */}
-  <section className="bg-gray-100 py-16 px-4" id="fitur">
-    <div className="max-w-5xl mx-auto">
-      <h3 className="text-2xl font-semibold text-center mb-10">Fitur Unggulan</h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <Feature title="Website Mini Gratis" />
-        <Feature title="Input Stok & Transaksi" />
-        <Feature title="Rekomendasi Barang Laris (AI)" />
-        <Feature title="Terhubung ke WhatsApp" />
-      </div>
-    </div>
-  </section>
-
-  {/* Cara Kerja */}
-  <section className="py-16 px-4" id="cara">
-    <div className="max-w-4xl mx-auto text-center">
-      <h3 className="text-2xl font-semibold mb-10">Cara Kerja</h3>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-        <Step number="1" text="Daftar" />
-        <Step number="2" text="Isi Produk" />
-        <Step number="3" text="Jualan Online" />
+  {/* Kategori */}
+  <section className="py-16 px-4" id="kategori">
+    <div className="max-w-5xl mx-auto text-center">
+      <h3 className="text-2xl font-semibold mb-10">Kategori Layanan</h3>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <KategoriCard title="Website Mini Gratis" />
+        <KategoriCard title="Input Stok & Transaksi" />
+        <KategoriCard title="Rekomendasi Barang (AI)" />
+        <KategoriCard title="Terhubung ke WhatsApp" />
+        <KategoriCard title="Kasir Warung" />
+        <KategoriCard title="Produk WarungAI" />
+        <KategoriCard title="ChatBot AI" />
+        <KategoriCard title="Database Warung" />
+        <KategoriCard title="Dashboard Pemilik" />
       </div>
     </div>
   </section>
@@ -90,38 +49,12 @@ export default function HomePage() { return (
   <footer className="bg-gray-800 text-white text-center p-4 mt-10" id="kontak">
     <p>Email: support@deskly.tech</p>
     <p>Alamat: Jl. Desa Digital No. 123, Indonesia</p>
-    <p className="mt-2">© 2025 WarungAI by Deskly</p>
+    <p className="mt-2">© 2025 WarungAI</p>
   </footer>
 </main>
 
 ); }
 
-function Feature({ title }: { title: string }) {
-  return (
-    <div className="bg-white p-6 rounded-lg shadow-md text-center">
-      <h4 className="font-semibold text-lg">{title}</h4>
-    </div>
-  );
-}
+function Product({ name, price }) { return ( <div className="bg-white p-4 rounded-lg shadow-md"> <div className="h-32 bg-gray-200 mb-4 flex items-center justify-center">Gambar</div> <h4 className="font-bold text-lg mb-1">{name}</h4> <p className="text-blue-500">{price}</p> <button className="mt-2 px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-600"> Beli </button> </div> ); }
 
-function Step({ number, text }: { number: string; text: string }) {
-  return (
-    <div className="bg-white p-6 rounded-lg shadow-md">
-      <div className="text-blue-500 text-4xl font-bold mb-2">{number}</div>
-      <p>{text}</p>
-    </div>
-  );
-}
-
-function Product({ name, price }: { name: string; price: string }) {
-  return (
-    <div className="bg-white p-4 rounded-lg shadow-md">
-      <div className="h-32 bg-gray-200 mb-4 flex items-center justify-center">Gambar</div>
-      <h4 className="font-bold text-lg mb-1">{name}</h4>
-      <p className="text-blue-500">{price}</p>
-      <button className="mt-2 px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">Beli</button>
-    </div>
-  );
-}
-
-
+function KategoriCard({ title }) { return ( <div className="bg-white p-6 rounded-lg shadow-md text-center"> <h4 className="font-semibold text-lg">{title}</h4> </div> ); }
