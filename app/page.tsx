@@ -3,6 +3,15 @@
 import React, { useState } from "react";
 import { Home, User, ShoppingCart, Menu, MessageSquare, QrCode } from "lucide-react";
 import { motion, HTMLMotionProps } from "framer-motion";
+import React from "react";
+import Link from "next/link";
+import {
+  Home,
+  ShoppingCart,
+  QrCode,
+  MessageSquare,
+  User,
+} from "lucide-react";
 
 export default function HomePage() {
   const [cartCount, setCartCount] = useState(3);
@@ -73,7 +82,7 @@ export default function HomePage() {
   );
 }
 
-function BottomNav({ cartCount, onMenuClick }: { cartCount: number; onMenuClick: () => void }) {
+export default function BottomNavBar() {
   return (
     <nav className="fixed bottom-0 left-0 right-0 bg-white shadow-md border-t border-gray-200 z-50 flex justify-around py-2">
       <Link href="/#beranda" className="flex flex-col items-center text-xs text-gray-700">
