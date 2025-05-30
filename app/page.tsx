@@ -76,23 +76,31 @@ export default function HomePage() {
 
 
 function BottomNav({ cartCount, onMenuClick }: { cartCount: number; onMenuClick: () => void }) {
-  const icons = [
-    { href: "hero", src: "icon_1.ico", label: "Beranda" },
-    { href: "kategori", src: "icon_2.ico", label: "Kategori" },
-    { href: "scan", src: "icon_3.ico", label: "Scan" },
-    { href: "chat", src: "icon_4.ico", label: "Chat" },
-    { href: "akun", src: "icon_5.ico", label: "Akun" },
-  ];
-
   return (
-   <nav className="fixed bottom-0 left-0 right-0 bg-white shadow-inner border-t z-50 flex justify-around py-2">
-  {icons.map((icon) => (
-    <a key={icon.href} href={`#${icon.href}`} className="flex flex-col items-center text-xs text-gray-700">
-      <img src={`/${icon.src}`} alt={icon.label} className="w-10 h-10 mb-1" />
-      <span>{icon.label}</span>
-    </a>
-  ))}
-</nav>
-
+    <nav className="fixed bottom-0 left-0 right-0 bg-white border-t-0 z-50 flex justify-around py-2 shadow-inner">
+      <a href="hero" className="flex flex-col items-center text-xs text-gray-700">
+        <Home size={20} />
+        <span>Beranda</span>
+      </a>
+      <a href="kategori" className="flex flex-col items-center text-xs text-gray-700">
+        <ShoppingCart size={20} />
+        <span>Kategori</span>
+      </a>
+      <a href="scan" className="flex flex-col items-center text-xs text-gray-700">
+        <QrCode size={20} />
+        <span>Scan</span>
+      </a>
+      <a href="chat" className="flex flex-col items-center text-xs text-gray-700">
+        <MessageSquare size={20} />
+        <span>Chat</span>
+      </a>
+      <a href="akun" className="flex flex-col items-center text-xs text-gray-700 relative">
+        <Menu size={20} />
+        {cartCount > 0 && (
+          <span className="absolute top-0 right-0 text-[10px] bg-red-500 text-white px-1.5 rounded-full">{cartCount}</span>
+        )}
+        <span>Akun</span>
+      </a>
+    </nav>
   );
 }
