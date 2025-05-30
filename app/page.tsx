@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Home, User, ShoppingCart, Menu, MessageSquare, QrCode } from "lucide-react";
 import { motion, HTMLMotionProps } from "framer-motion";
+import Link from "next/link";
 
 export default function HomePage() {
   const [cartCount, setCartCount] = useState(3);
@@ -73,32 +74,61 @@ export default function HomePage() {
   );
 }
 
-function BottomNav({ cartCount, onMenuClick }: { cartCount: number; onMenuClick: () => void }) {
+
+function BottomNav({
+  cartCount,
+  onMenuClick,
+}: {
+  cartCount: number;
+  onMenuClick: () => void;
+}) {
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-white border-t-0 z-50 flex justify-around py-2 shadow-inner">
-      <a href="hero" className="flex flex-col items-center text-xs text-gray-700">
-        <Home size={20} />
+    <nav className="fixed bottom-0 left-0 right-0 bg-white border-t shadow-md z-50 flex justify-around py-2">
+      <Link
+        href="#hero"
+        className="flex flex-col items-center text-xs text-gray-700 hover:scale-110 transition-transform"
+      >
+        <Home size={22} className="mb-1" />
         <span>Beranda</span>
-      </a>
-      <a href="kategori" className="flex flex-col items-center text-xs text-gray-700">
-        <ShoppingCart size={20} />
+      </Link>
+
+      <Link
+        href="#kategori"
+        className="flex flex-col items-center text-xs text-gray-700 hover:scale-110 transition-transform"
+      >
+        <ShoppingCart size={22} className="mb-1" />
         <span>Kategori</span>
-      </a>
-      <a href="scan" className="flex flex-col items-center text-xs text-gray-700">
-        <QrCode size={20} />
+      </Link>
+
+      <Link
+        href="#scan"
+        className="flex flex-col items-center text-xs text-gray-700 hover:scale-110 transition-transform"
+      >
+        <QrCode size={22} className="mb-1" />
         <span>Scan</span>
-      </a>
-      <a href="chat" className="flex flex-col items-center text-xs text-gray-700">
-        <MessageSquare size={20} />
+      </Link>
+
+      <Link
+        href="#chat"
+        className="flex flex-col items-center text-xs text-gray-700 hover:scale-110 transition-transform"
+      >
+        <MessageSquare size={22} className="mb-1" />
         <span>Chat</span>
-      </a>
-      <a href="akun" className="flex flex-col items-center text-xs text-gray-700 relative">
-        <Menu size={20} />
+      </Link>
+
+      <Link
+        href="#akun"
+        className="flex flex-col items-center text-xs text-gray-700 relative hover:scale-110 transition-transform"
+      >
+        <User size={22} className="mb-1" />
         {cartCount > 0 && (
-          <span className="absolute top-0 right-0 text-[10px] bg-red-500 text-white px-1.5 rounded-full">{cartCount}</span>
+          <span className="absolute -top-1 -right-2 text-[10px] bg-red-500 text-white px-1.5 rounded-full">
+            {cartCount}
+          </span>
         )}
         <span>Akun</span>
-      </a>
+      </Link>
     </nav>
+
   );
 }
