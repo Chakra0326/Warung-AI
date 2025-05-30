@@ -95,7 +95,7 @@ function BottomNav({ cartCount, onMenuClick }: { cartCount: number; onMenuClick:
         <span>Chat</span>
       </a>
       <a href="akun" className="flex flex-col items-center text-xs text-gray-700 relative">
-        <Menu size={20} />
+        <User size={20} />
         {cartCount > 0 && (
           <span className="absolute top-0 right-0 text-[10px] bg-red-500 text-white px-1.5 rounded-full">{cartCount}</span>
         )}
@@ -104,3 +104,4 @@ function BottomNav({ cartCount, onMenuClick }: { cartCount: number; onMenuClick:
     </nav>
   );
 }
+
