@@ -77,11 +77,11 @@ export default function HomePage() {
 
 function BottomNav({ cartCount, onMenuClick }: { cartCount: number; onMenuClick: () => void }) {
   const icons = [
-    { href: "hero", src: "/icons/home.png", label: "Beranda" },
-    { href: "kategori", src: "icon_21.png", label: "Kategori" },
-    { href: "scan", src: "icon_3.png", label: "Scan" },
-    { href: "chat", src: "icon_4.png", label: "Chat" },
-    { href: "akun", src: "icon_5.png", label: "Akun" },
+    { href: "hero", src: "icon_1.ico", label: "Beranda" },
+    { href: "kategori", src: "icon_2.ico", label: "Kategori" },
+    { href: "scan", src: "icon_3.ico", label: "Scan" },
+    { href: "chat", src: "icon_4.ico", label: "Chat" },
+    { href: "akun", src: "icon_5.ico", label: "Akun" },
   ];
 
   return (
