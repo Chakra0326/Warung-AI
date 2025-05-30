@@ -75,47 +75,36 @@ export default function HomePage() {
 }
 
 
-function BottomNav({
-  cartCount,
-  onMenuClick,
-}: {
-  cartCount: number;
-  onMenuClick: () => void;
-}) {
+function BottomNav({ cartCount, onMenuClick }: { cartCount: number; onMenuClick: () => void }) {
+  const icons = [
+    { href: "hero", src: "/icons/home.png", label: "Beranda" },
+    { href: "kategori", src: "icon_21.png", label: "Kategori" },
+    { href: "scan", src: "icon_3.png", label: "Scan" },
+    { href: "chat", src: "icon_4.png", label: "Chat" },
+    { href: "akun", src: "icon_5.png", label: "Akun" },
+  ];
+
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-white z-50 flex justify-around items-center py-2 border-t border-gray-200 shadow-sm">
-      <a href="#hero" className="flex flex-col items-center text-xs text-gray-800">
-        <div className="bg-gray-100 rounded-xl p-2 shadow">
-          <span className="text-2xl">🏠</span>
-        </div>
-        <span className="mt-1">Beranda</span>
-      </a>
+    <nav className="fixed bottom-0 left-0 right-0 bg-white z-50 flex justify-around items-center py-2 border-t border-gray-200 shadow-inner">
+      {icons.map((item, i) => (
+        <a
+          key={item.label}
+          href={item.href}
+          className="flex flex-col items-center text-xs text-gray-800"
+        >
+          <div className={`rounded-xl p-2 ${i === 0 ? "bg-[#f1f1f1] shadow-md" : ""}`}>
+            <img src={item.src} alt={item.label} className="w-6 h-6" />
+          </div>
+          <span className="mt-1">{item.label}</span>
+        </a>
+      ))}
 
-      <a href="#kategori" className="flex flex-col items-center text-xs text-gray-800">
-        <span className="text-2xl">🍱</span>
-        <span className="mt-1">Kategori</span>
-      </a>
-
-      <a href="#scan" className="flex flex-col items-center text-xs text-gray-800">
-        <span className="text-2xl">🔍</span>
-        <span className="mt-1">Scan</span>
-      </a>
-
-      <a href="#chat" className="flex flex-col items-center text-xs text-gray-800">
-        <span className="text-2xl">💬</span>
-        <span className="mt-1">Chat</span>
-      </a>
-
-      <a href="#akun" className="flex flex-col items-center text-xs text-gray-800 relative">
-        <span className="text-2xl">👤</span>
-        {cartCount > 0 && (
-          <span className="absolute top-0 right-0 text-[10px] bg-red-500 text-white px-1.5 rounded-full">
-            {cartCount}
-          </span>
-        )}
-        <span className="mt-1">Akun</span>
-      </a>
+      {/* Notifikasi Cart di Akun */}
+      {cartCount > 0 && (
+        <span className="absolute bottom-10 right-3 text-[10px] bg-red-500 text-white px-1.5 rounded-full">
+          {cartCount}
+        </span>
+      )}
     </nav>
   );
 }
-
