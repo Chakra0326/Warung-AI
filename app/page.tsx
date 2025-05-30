@@ -83,52 +83,39 @@ function BottomNav({
   onMenuClick: () => void;
 }) {
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-white border-t shadow-md z-50 flex justify-around py-2">
-      <Link
-        href="#hero"
-        className="flex flex-col items-center text-xs text-gray-700 hover:scale-110 transition-transform"
-      >
-        <Home size={22} className="mb-1" />
-        <span>Beranda</span>
-      </Link>
+    <nav className="fixed bottom-0 left-0 right-0 bg-white z-50 flex justify-around items-center py-2 border-t border-gray-200 shadow-sm">
+      <a href="#hero" className="flex flex-col items-center text-xs text-gray-800">
+        <div className="bg-gray-100 rounded-xl p-2 shadow">
+          <span className="text-2xl">🏠</span>
+        </div>
+        <span className="mt-1">Beranda</span>
+      </a>
 
-      <Link
-        href="#kategori"
-        className="flex flex-col items-center text-xs text-gray-700 hover:scale-110 transition-transform"
-      >
-        <ShoppingCart size={22} className="mb-1" />
-        <span>Kategori</span>
-      </Link>
+      <a href="#kategori" className="flex flex-col items-center text-xs text-gray-800">
+        <span className="text-2xl">🍱</span>
+        <span className="mt-1">Kategori</span>
+      </a>
 
-      <Link
-        href="#scan"
-        className="flex flex-col items-center text-xs text-gray-700 hover:scale-110 transition-transform"
-      >
-        <QrCode size={22} className="mb-1" />
-        <span>Scan</span>
-      </Link>
+      <a href="#scan" className="flex flex-col items-center text-xs text-gray-800">
+        <span className="text-2xl">🔍</span>
+        <span className="mt-1">Scan</span>
+      </a>
 
-      <Link
-        href="#chat"
-        className="flex flex-col items-center text-xs text-gray-700 hover:scale-110 transition-transform"
-      >
-        <MessageSquare size={22} className="mb-1" />
-        <span>Chat</span>
-      </Link>
+      <a href="#chat" className="flex flex-col items-center text-xs text-gray-800">
+        <span className="text-2xl">💬</span>
+        <span className="mt-1">Chat</span>
+      </a>
 
-      <Link
-        href="#akun"
-        className="flex flex-col items-center text-xs text-gray-700 relative hover:scale-110 transition-transform"
-      >
-        <User size={22} className="mb-1" />
+      <a href="#akun" className="flex flex-col items-center text-xs text-gray-800 relative">
+        <span className="text-2xl">👤</span>
         {cartCount > 0 && (
-          <span className="absolute -top-1 -right-2 text-[10px] bg-red-500 text-white px-1.5 rounded-full">
+          <span className="absolute top-0 right-0 text-[10px] bg-red-500 text-white px-1.5 rounded-full">
             {cartCount}
           </span>
         )}
-        <span>Akun</span>
-      </Link>
+        <span className="mt-1">Akun</span>
+      </a>
     </nav>
-
   );
 }
+
