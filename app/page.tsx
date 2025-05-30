@@ -76,23 +76,23 @@ export default function HomePage() {
 function BottomNav({ cartCount, onMenuClick }: { cartCount: number; onMenuClick: () => void }) {
   return (
     <nav className="fixed bottom-0 left-0 right-0 bg-white border-t-0 z-50 flex justify-around py-2 shadow-inner">
-      <a href="#hero" className="flex flex-col items-center text-xs text-gray-700">
+      <a href="hero" className="flex flex-col items-center text-xs text-gray-700">
         <Home size={20} />
         <span>Beranda</span>
       </a>
-      <a href="#kategori" className="flex flex-col items-center text-xs text-gray-700">
+      <a href="kategori" className="flex flex-col items-center text-xs text-gray-700">
         <ShoppingCart size={20} />
         <span>Kategori</span>
       </a>
-      <a href="#scan" className="flex flex-col items-center text-xs text-gray-700">
+      <a href="scan" className="flex flex-col items-center text-xs text-gray-700">
         <QrCode size={20} />
         <span>Scan</span>
       </a>
-      <a href="#chat" className="flex flex-col items-center text-xs text-gray-700">
+      <a href="chat" className="flex flex-col items-center text-xs text-gray-700">
         <MessageSquare size={20} />
         <span>Chat</span>
       </a>
-      <a href="#akun" className="flex flex-col items-center text-xs text-gray-700 relative">
+      <a href="akun" className="flex flex-col items-center text-xs text-gray-700 relative">
         <Menu size={20} />
         {cartCount > 0 && (
           <span className="absolute top-0 right-0 text-[10px] bg-red-500 text-white px-1.5 rounded-full">{cartCount}</span>
