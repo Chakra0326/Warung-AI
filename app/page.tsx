@@ -85,26 +85,14 @@ function BottomNav({ cartCount, onMenuClick }: { cartCount: number; onMenuClick:
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-white z-50 flex justify-around items-center py-2 border-t border-gray-200 shadow-inner">
-      {icons.map((item, i) => (
-        <a
-          key={item.label}
-          href={item.href}
-          className="flex flex-col items-center text-xs text-gray-800"
-        >
-          <div className={`rounded-xl p-2 ${i === 0 ? "bg-[#f1f1f1] shadow-md" : ""}`}>
-            <img src={item.src} alt={item.label} className="w-6 h-6" />
-          </div>
-          <span className="mt-1">{item.label}</span>
-        </a>
-      ))}
+   <nav className="fixed bottom-0 left-0 right-0 bg-white shadow-inner border-t z-50 flex justify-around py-2">
+  {icons.map((icon) => (
+    <a key={icon.href} href={`#${icon.href}`} className="flex flex-col items-center text-xs text-gray-700">
+      <img src={`/icons/${icon.src}`} alt={icon.label} className="w-8 h-8 mb-1" />
+      <span>{icon.label}</span>
+    </a>
+  ))}
+</nav>
 
-      {/* Notifikasi Cart di Akun */}
-      {cartCount > 0 && (
-        <span className="absolute bottom-10 right-3 text-[10px] bg-red-500 text-white px-1.5 rounded-full">
-          {cartCount}
-        </span>
-      )}
-    </nav>
   );
 }
