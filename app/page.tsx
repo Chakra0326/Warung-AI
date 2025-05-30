@@ -88,7 +88,7 @@ function BottomNav({ cartCount, onMenuClick }: { cartCount: number; onMenuClick:
    <nav className="fixed bottom-0 left-0 right-0 bg-white shadow-inner border-t z-50 flex justify-around py-2">
   {icons.map((icon) => (
     <a key={icon.href} href={`#${icon.href}`} className="flex flex-col items-center text-xs text-gray-700">
-      <img src={`${icon.src}`} alt={icon.label} className="w-8 h-8 mb-1" />
+      <img src={`/${icon.src}`} alt={icon.label} className="w-8 h-8 mb-1" />
       <span>{icon.label}</span>
     </a>
   ))}
