@@ -75,30 +75,31 @@ export default function HomePage() {
 
 function BottomNav({ cartCount, onMenuClick }: { cartCount: number; onMenuClick: () => void }) {
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-white border-t-0 z-50 flex justify-around py-2 shadow-inner">
-      <a href="hero" className="flex flex-col items-center text-xs text-gray-700">
-        <Home size={20} />
+    <nav className="fixed bottom-0 left-0 right-0 bg-white shadow-md border-t border-gray-200 z-50 flex justify-around py-2">
+      <Link href="/#beranda" className="flex flex-col items-center text-xs text-gray-700">
+        <Home size={22} className="mb-1" />
         <span>Beranda</span>
-      </a>
-      <a href="kategori" className="flex flex-col items-center text-xs text-gray-700">
-        <ShoppingCart size={20} />
+      </Link>
+
+      <Link href="/#kategori" className="flex flex-col items-center text-xs text-gray-700">
+        <ShoppingCart size={22} className="mb-1" />
         <span>Kategori</span>
-      </a>
-      <a href="scan" className="flex flex-col items-center text-xs text-gray-700">
-        <QrCode size={20} />
+      </Link>
+
+      <Link href="/#scan" className="flex flex-col items-center text-xs text-gray-700">
+        <QrCode size={22} className="mb-1" />
         <span>Scan</span>
-      </a>
-      <a href="chat" className="flex flex-col items-center text-xs text-gray-700">
-        <MessageSquare size={20} />
+      </Link>
+
+      <Link href="/#chat" className="flex flex-col items-center text-xs text-gray-700">
+        <MessageSquare size={22} className="mb-1" />
         <span>Chat</span>
-      </a>
-      <a href="akun" className="flex flex-col items-center text-xs text-gray-700 relative">
-        <Menu size={20} />
-        {cartCount > 0 && (
-          <span className="absolute top-0 right-0 text-[10px] bg-red-500 text-white px-1.5 rounded-full">{cartCount}</span>
-        )}
+      </Link>
+
+      <Link href="/#akun" className="flex flex-col items-center text-xs text-gray-700">
+        <User size={22} className="mb-1" />
         <span>Akun</span>
-      </a>
+      </Link>
     </nav>
   );
 }
